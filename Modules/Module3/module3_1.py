@@ -1,20 +1,28 @@
-#Вам необходимо написать 3 функции:
-#Функция count_calls подсчитывающая вызовы остальных функций.
-#Функция string_info принимает аргумент - строку и возвращает кортеж из: длины этой строки, строку в верхнем регистре, строку в нижнем регистре.
-#Функция is_contains принимает два аргумента: строку и список, и возвращает True, если строка находится в этом списке, False - если отсутствует. Регистром строки при проверке пренебречь: UrbaN ~ URBAN.
+calls = 0
 
-x = 0
+
 def count_calls():
-    global x
-    x += 1
+    global calls
+    calls += 1
 
 
-def string_info(my_string="string", my_tuple=()):
+def string_info(string="String"):
     count_calls()
-    my_tuple = (len(my_string), my_string.upper(), my_string.lower())
-    return my_tuple
+    string_tuple = (len(string), string.upper(), string.lower())
+    return string_tuple
 
 
-def is_contains():
+def is_contains(content="", list_to_search=[]):
+    result = False
     count_calls()
+    for item in list_to_search[:]:
+        if item.lower() == content.lower():
+            result = True
+    return result
 
+
+print(string_info('Capybara'))
+print(string_info('Armageddon'))
+print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN']))  # Urban ~ urBAN
+print(is_contains('cycle', ['recycling', 'cyclic']))  # No matches
+print(calls)
