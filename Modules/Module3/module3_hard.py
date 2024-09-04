@@ -7,14 +7,21 @@ def calculate_structure_sum(data_structure):
         elif isinstance(data_structure[item], float):
             sum = sum + data_structure[item]
         elif isinstance(data_structure[item], str):
+            #for symbol in (data_structure[item]):
+            #не понятно, что делать с текстовыми строками
             print("СТРОКА")
         elif isinstance(data_structure[item], list):
+            for list_item in range(len(data_structure[item])):
+                sum = sum + data_structure[item][list_item]
             print("СПИСОК")
         elif isinstance(data_structure[item], dict):
+            for dict_item in data_structure[item]:
+                sum = sum+data_structure[item][dict_item]
             print("СЛОВАРЬ")
         elif isinstance(data_structure[item], tuple):
             print("КОРТЕЖ")
     return sum
+
 
 #входные данные
 data_structure = [
