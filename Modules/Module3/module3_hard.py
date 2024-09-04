@@ -1,7 +1,10 @@
 def calculate_structure_sum(data_structure):
     for item in range(len(data_structure)):
-        print(f"{item}=={data_structure[item]}")
-    
+        print(f"{item}=={data_structure[item]} тип данных:")
+        data_type = str(type(data_structure[item]))
+        print(data_type)
+        if data_type == "<class 'list'>":
+            print("СПИСОК!!!")
 
 #входные данные
 data_structure = [
