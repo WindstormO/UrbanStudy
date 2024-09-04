@@ -1,23 +1,23 @@
 def calculate_structure_sum(*args):
     total_sum = 0
     for arg in args:
-        if isinstance(arg, set):
-            total_sum += calculate_structure_sum(*arg)
-        elif isinstance(arg, tuple):
-            total_sum += calculate_structure_sum(*arg)
-        elif isinstance(arg, list):
-            total_sum += int(temp)
-        elif isinstance(arg, dict):
-            total_sum += calculate_structure_sum(*arg.items())
-        elif isinstance(arg, str):
-            total_sum += len(arg)
-        elif isinstance(arg, float):
-            total_sum += arg
-        elif isinstance(arg, int):
-            total_sum += arg
-        elif isinstance(arg, none):
-            pass
-    return sum
+        for item in arg:
+            print(item)
+            if isinstance(item, set):
+                print("МНОЖЕСТВО")
+            elif isinstance(item, tuple):
+                print("КОРТЕЖ")
+            elif isinstance(item, dict):
+                print("СЛОВАРЬ")
+            elif isinstance(item, list):
+                for element in item:
+                    total_sum += element
+            elif isinstance(item, str):
+                total_sum += len(item)
+            elif isinstance(item, int, float):
+                print("ЦЕЛОЕ ЧИСЛО")
+                total_sum += item
+    return total_sum
 
 
 #входные данные
