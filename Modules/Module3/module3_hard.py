@@ -1,5 +1,6 @@
 def calculate_structure_sum(data_structure):
-    
+    for item in range(len(data_structure)):
+        print(f"{item}=={data_structure[item]}")
     
 
 #входные данные
