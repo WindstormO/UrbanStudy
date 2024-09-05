@@ -4,11 +4,13 @@ def calculate_structure_sum(*args):
         if isinstance(arg, (list, tuple, set)):
             total_sum += calculate_structure_sum(*arg)
         elif isinstance(arg, dict):
-            "СЛОВАРЬ"
+            total_sum += calculate_structure_sum(*arg.items())
         elif isinstance(arg, str):
             total_sum += len(arg)
         elif isinstance(arg, (int, float)):
             total_sum += arg
+        elif isinstance(arg, None):
+            pass
     return total_sum
 
 
